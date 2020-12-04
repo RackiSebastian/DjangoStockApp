@@ -1,0 +1,21 @@
+{%extends 'base.html' %}
+{%block content%}
+<br/>
+<br/>
+
+{%if ticker%}
+	{{ticker}}
+{%endif%}
+{%if api%}
+	{%if api == "Error Check your ticker" %}
+		There was a problem with your ticker symbol. Please try again
+	{%else%}
+		<h1>Company Name: {{api.companyName}}</h1><br/>
+		<br/>
+		Company Price: {{api.latestPrice}}
+
+	{%endif%}
+
+
+{%endif%}
+{%endblock%}
